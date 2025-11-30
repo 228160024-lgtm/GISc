@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --gisc-forest: #0a3d62;
+    --gisc-teal: #12b48b;
+    --gisc-lime: #7dd56f;
+    --gisc-ink: #0b132b;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #0b132b;
+}
