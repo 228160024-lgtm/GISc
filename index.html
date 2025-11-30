@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GISc - Green Indonesia Smart City Explorer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="hero__content">
+      <p class="eyebrow">Green Indonesia Smart City</p>
+      <h1>Temukan destinasi wisata Sumatera bersama Bank Indonesia</h1>
+      <p class="lead">GISc membantu wisatawan mancanegara melihat potensi wisata regional Sumatera, mengecek kesiapan green economy, dan menghitung opsi transportasi menuju kota tujuan.</p>
+      <div class="hero__actions">
+        <button id="detectLocation" class="button primary">Deteksi lokasi saya</button>
+        <a class="button ghost" href="#destinations">Jelajahi destinasi</a>
+      </div>
+    </div>
+    <div class="hero__badge">Kolaborasi Bank Indonesia x GISc</div>
+  </header>
+
+  <main>
+    <section id="destinations" class="panel">
+      <div class="panel__header">
+        <div>
+          <p class="eyebrow">Destinasi Sumatera</p>
+          <h2>Pilih kota untuk melihat detail wisata & green economy</h2>
+        </div>
+        <select id="destinationSelect" aria-label="Pilih kota tujuan">
+          <option value="">Pilih kota...</option>
+        </select>
+      </div>
+
+      <div class="grid">
+        <article class="card" id="destinationInfo">
+          <h3 id="cityName">Belum ada kota dipilih</h3>
+          <p id="cityDescription">Pilih salah satu kota di Sumatera untuk melihat penjelasan singkatnya.</p>
+          <div class="pill-group" id="ecoStatus"></div>
+          <div class="chips" id="attractions"></div>
+        </article>
+
+        <article class="card" id="transportInfo">
+          <div class="card__header">
+            <div>
+              <p class="eyebrow">Transportasi & Estimasi</p>
+              <h3>Hitung ongkos perjalanan</h3>
+            </div>
+            <div class="badge" id="travelDistance">-</div>
+          </div>
+          <div id="transportList" class="transport-list">Pilih kota untuk melihat rekomendasi transportasi.</div>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel__header">
+        <div>
+          <p class="eyebrow">Peta & posisi</p>
+          <h2>Periksa posisi kedatangan dan lokasi kota tujuan</h2>
+          <p class="lead">Aktifkan deteksi lokasi untuk mempermudah penentuan rute dari titik Anda sekarang (contoh: Bandara Kualanamu).</p>
+        </div>
+      </div>
+      <div id="map" class="map"></div>
+      <p class="help" id="locationStatus">Lokasi Anda belum terdeteksi.</p>
+    </section>
+
+    <section class="panel highlights">
+      <div>
+        <p class="eyebrow">Mengapa GISc?</p>
+        <h2>Fokus pada ekonomi hijau & wisata berkelanjutan</h2>
+        <ul class="highlight-list">
+          <li>Informasi kesiapan green economy per kota dan inspirasi aktivitas ramah lingkungan.</li>
+          <li>Estimasi transportasi menuju destinasi populer di Sumatera, lengkap dengan kisaran ongkos.</li>
+          <li>Dukungan geolokasi agar wisatawan internasional mudah bernavigasi saat tiba.</li>
+        </ul>
+      </div>
+      <div class="cta-card">
+        <h3>Butuh rekomendasi khusus?</h3>
+        <p>Hubungi tim GISc dan Bank Indonesia untuk kurasi pengalaman wisata Sumatera yang lebih hijau.</p>
+        <a class="button primary block" href="mailto:info@gisc.id">Email info@gisc.id</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>GISc - Green Indonesia Smart City | Kolaborasi Bank Indonesia</p>
+    <p class="muted">Regional fokus: Sumatera (Medan, Binjai, Tebing Tinggi, Pematang Siantar, Padang Sidimpuan, Tanjung Balai, Sibolga, Gunung Sitoli)</p>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
